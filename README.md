@@ -1,5 +1,5 @@
 
-# Android App - Home screen widgets
+# Android note
 
 
 ### Copy text: ( java ) 
