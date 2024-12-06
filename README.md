@@ -56,7 +56,7 @@ long duration = 1000 * 70;
 ```
 ### Splash Screen
 ```bash
-drawable/splash.xml
+<!-- drawable/splash.xml -->
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list
     xmlns:android="http://schemas.android.com/apk/res/android">
@@ -67,7 +67,7 @@ drawable/splash.xml
         android:drawable="@drawable/ic_launcher_foreground"/>
 </layer-list>
 
-themes/themes.xml
+<!-- themes/themes.xml -->
 <item name="android:navigationBarColor">@color/white</item>
 <item name="android:statusBarColor">@color/white </item>
 <item name="android:windowLightNavigationBar">true</item>
@@ -140,16 +140,16 @@ isSwitchOn = true;
 ```
 ### Spinner
 ```bash
-XML::------
+<!-- XML::---- -->
 <Spinner>
 
-ARRAY::----
+<!--  ARRAY::-- -->
 <string-array name="category_array">
     <item>Transportation</item>
     <item>Housing</item>
 </string-array>
 
-JAVA::----
+// JAVA::----
 String[] spinnerArray ;
 Spinner CategorusSpinner;
 spinnerArray = getResources().getStringArray(R.array.category_array);
@@ -198,7 +198,7 @@ cancel.setOnClickListener(v -> dialog.cancel());
 ```
 ### Radio Group and Button
 ```bash
-XML::
+<!--  XML:: -->
 <RadioGroup
     android:id="@+id/rG>
 
@@ -212,7 +212,7 @@ XML::
 
 </RadioGroup>
 
-JAVA::
+// JAVA::
 RadioGroup rG = findViewById(R.id.rG);
 rG.clearCheck();
 rG.setOnCheckedChangeListener((group, checkedId) -> {
@@ -233,11 +233,15 @@ if (selectedId == -1){
 ```bash
 null
 ```
-### 1.	PHP mysql all join
+### 2.	PHP mysql all join
 ```bash
 null
 ```
-### 1.	Mysql view
+### 3.	Mysql view
+```bash
+null
+```
+### 3.	Multithreading 
 ```bash
 null
 ```
