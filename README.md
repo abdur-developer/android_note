@@ -231,7 +231,79 @@ if (selectedId == -1){
 ```
 ### 1.	Dialog Fragment
 ```bash
-null
+~~~~~~~~~require sensor 
+	
+		<uses-feature android:name="android.hardware.sensor.compass" android:required="true"/>
+		
+========================================================================================
+		
+~~~~~~~~~get sensor name(java)
+
+        SensorManager manager = getSystemService(Context.SENSOR_SERVICE);
+        List<Sensor> sensorList = manager.getSensorList(Sensor.TYPE_ALL);
+
+        //tv.setText(sensorList.toString());
+        for (Sensor sensor:sensorList) {
+            tv.append(sensor.getName()+"\n");
+        }
+========================================================================================
+
+~~~~~~~~~check specific sensore
+
+		String sensor_name = "ORIENTATION";
+        if (manager.getDefaultSensor(Sensor.TYPE_ORIENTATION) != null){
+            tv.setText(sensor_name+" is available");
+        }else{
+            tv.setText(sensor_name+" is not available");
+        }
+		
+========================================================================================
+
+~~~~~~~~~Sensor Event listener(ligth sensor)
+
+	@Override
+    public void onSensorChanged(SensorEvent sensorEvent) {
+        float changeValue = sensorEvent.values[0];
+        tv.setText(String.valueOf(changeValue));
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        manager.registerListener(this, manager.getDefaultSensor(Sensor.TYPE_LIGHT),SensorManager.SENSOR_DELAY_NORMAL);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        manager.unregisterListener(this);
+    }
+
+========================================================================================
+
+~~~~~~~~~Sensor Event listener(Temp sensor)
+
+	@Override
+    public void onSensorChanged(SensorEvent sensorEvent) {
+        float changeValue = sensorEvent.values[0];
+        tv.setText(String.valueOf(changeValue));
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        manager.registerListener(this, manager.getDefaultSensor(Sensor.TYPE_AMBIENT_TEMPERATURE),SensorManager.SENSOR_DELAY_NORMAL);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        manager.unregisterListener(this);
+    }
+
+========================================================================================
+
+
 ```
 ### 2.	PHP mysql all join
 ```bash
