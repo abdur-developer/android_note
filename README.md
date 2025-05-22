@@ -229,7 +229,7 @@ if (selectedId == -1){
 
 
 ```
-### 1.	Dialog Fragment
+### Sensor project
 ```bash
 ~~~~~~~~~require sensor 
 	
