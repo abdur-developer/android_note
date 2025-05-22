@@ -305,6 +305,10 @@ if (selectedId == -1){
 
 
 ```
+### 1.	Dialog Fragment
+```bash
+null
+```
 ### 2.	PHP mysql all join
 ```bash
 null
