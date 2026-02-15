@@ -305,6 +305,40 @@ if (selectedId == -1){
 
 
 ```
+### SoundPool ছোট sound effect (typing, click, notification) এর জন্য optimized
+```java
+	SoundPool soundPool;
+    int typingSoundId;
+	void init(){
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            soundPool = new SoundPool.Builder()
+                    .setMaxStreams(5)
+                    .build();
+        } else {
+            soundPool = new SoundPool(5, AudioManager.STREAM_MUSIC, 0);
+        }
+
+        typingSoundId = soundPool.load(this, R.raw.typing, 1);
+	}
+	void playTypingSound(){
+        if(soundPool != null){
+            soundPool.play(typingSoundId, 1, 1, 1, 0, 1);
+        }
+    }
+    void stopTypingSound(){
+        if(soundPool != null){
+            soundPool.autoPause();
+        }
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(soundPool != null){
+            soundPool.release();
+            soundPool = null;
+        }
+    }
+```
 ### 1.	Dialog Fragment
 ```bash
 null
