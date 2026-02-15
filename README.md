@@ -3,14 +3,14 @@
 
 
 ### Copy text: ( java ) 
-```bash
+```java
 ClipboardManager manager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
 	ClipData data = ClipData.newPlainText("label","copy text");
 	manager.setPrimaryClip(data);
 
 ```
 ### Call-web-location: ( java )
-```bash
+```java
 String sUri;	
 sUri = " tel: +880 17094 09266"; //for calling
 	sUri = " https://facebook.com "; //for website
@@ -20,11 +20,11 @@ startActivity(i);
 
 ```
 ### auto link: ( xml )
-```bash
+```xml
 android:autoLink = "all" or "phone" or "email"startActivity(i);
 ```
 ### Count Down
-```bash
+```java
 long duration = 1000 * 70;
     long interval = 1000;
     new CountDownTimer(duration,interval){
@@ -47,7 +47,7 @@ long duration = 1000 * 70;
 
 ```
 ### Nagigation / Status
-```bash
+```xml
 <item name="android:navigationBarColor">@color/green</item>
 <item name="android:statusBarColor">@color/green</item>
 <item name="android:windowLightNavigationBar" tools:ignore="NewApi">true</item>
@@ -55,7 +55,7 @@ long duration = 1000 * 70;
 
 ```
 ### Splash Screen
-```bash
+```xml
 <!-- drawable/splash.xml -->
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list
@@ -77,7 +77,7 @@ long duration = 1000 * 70;
 
 ```
 ### Fragment
-```bash
+```java
 
 import android.app.Fragment; 
 import android.app.FragmentManager;
@@ -99,7 +99,7 @@ private void loadFragment(Fragment fragment) {
 
 ```
 ### hideStatusAndNavigationBar : java
-```bash
+```java
 View decorView = getWindow().getDecorView();
     int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
             | View.SYSTEM_UI_FLAG_FULLSCREEN;
@@ -107,7 +107,7 @@ View decorView = getWindow().getDecorView();
 
 ```
 ### Lottie Animation
-```bash
+```java
 Boolean isCheckDone = false;
 //xml e defind korte hobe
 private void checkDoneLottieClick() {
@@ -139,7 +139,7 @@ isSwitchOn = true;
 
 ```
 ### Spinner
-```bash
+```java
 <!-- XML::---- -->
 <Spinner>
 
@@ -175,7 +175,7 @@ CategorusSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListene
 
 ```
 ### Custom Alert Dialog
-```bash
+```java
 Context context = MainActivity.this;
 View customDialog = LayoutInflater.from(context).inflate(R.layout.adding_dialog, null);
 AlertDialog.Builder alertdialog = new AlertDialog.Builder(context);
@@ -197,7 +197,7 @@ cancel.setOnClickListener(v -> dialog.cancel());
 
 ```
 ### Radio Group and Button
-```bash
+```xml
 <!--  XML:: -->
 <RadioGroup
     android:id="@+id/rG>
@@ -230,7 +230,7 @@ if (selectedId == -1){
 
 ```
 ### Sensor project
-```bash
+```java
 ~~~~~~~~~require sensor 
 	
 		<uses-feature android:name="android.hardware.sensor.compass" android:required="true"/>
